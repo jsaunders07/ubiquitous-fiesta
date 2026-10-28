@@ -1,0 +1,52 @@
+Living Room
+The small living room contains a couch, coffee table, and two
+armchairs. Pictures of various cousins adorn the walls along
+with two of your aunt's wretched attempts at oil painting. You
+can't help but notice that the carpet could use a good
+vacuuming.
+
+Doorways lead west to your father's office, up the stairs to your
+bedroom, and north to the kitchen.
+#
+Bedroom
+This is your domain and has been since your family moved here
+when you were six. A nightstand with a Superman lamp sits next
+to your twin bed. Posters of various anime characters cover one
+wall. A pile of laundry, slowly but surely attaining sentience,
+occupies the far corner.
+
+The door to the attic is in the ceiling above the pile of
+clothes. You can  also head back down the stairs to the living room.
+#
+Office
+Your father's office, settled in disarray. Many parts of the room are
+overwhelming, and you can't help but think of how boring it must have
+been to be stuck up in here all day. The computer still seems to be on,
+but without a password it's effectively useless.
+
+The only door in the room leads east back to the living room.
+#
+Kitchen
+The room is as neat as it ever was. All the different tools and
+utensils are neatly in their place, except for a few things. A
+drawer was left open, and a peek into the fridge shows that much
+of the food has gone bad.
+
+There is a door to the west that leads to the Garage, and one
+that leads south to the living room.
+#
+Attic
+A very musty room, with cobwebs built up wherever they possibly could
+be. There are boxes scattered all across the room with various
+miscellaneous items strewn about. Some of it may possibly prove
+useful, but it's way too dirty to go rummaging around up here.
+
+The only way to go is back down to the bedroom.
+#
+Garage
+Your family car is still here, but it's being worked on. The car is
+jacked up missing half it's tires, and the hood is open revealing that
+multiple vital parts are missing. None of the missing items seem to
+be present elsewhere in the garage. 
+
+The Garage door is stuck shut, the only way to go is east back to the kitchen.
