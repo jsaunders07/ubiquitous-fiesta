@@ -67,9 +67,12 @@ public class Game {
 		}
 
 		if (tempRoom == null) {
-			Game.print("You cannot go in that direction!");
+			Game.print("You cannot go in that direction.");
+		} else if (tempRoom.getIsLocked()) {
+			Game.print("The " + tempRoom.getName() + " is locked!");
 		} else {
 			currentRoom = tempRoom;
+			Game.print("");
 		}
 
 	}
@@ -116,16 +119,20 @@ public class Game {
 				return;
 			}
 		}
-		mainGui.setActionDesc("No valid item name given.");
+		Game.print("No valid item name given.");
 	}
-	
+
+	public static Room getCurrentRoom() {
+		return currentRoom;
+	}
+
 	public static void saveGame() {
 		try {
 			File saveFile = new File("save0.sav"); // name the file yourself
 			saveFile.createNewFile(); // creates a new file
-			
+
 			ObjectOutputStream outStream = new ObjectOutputStream(new FileOutputStream(saveFile));
-			
+
 			outStream.writeObject(currentRoom);
 			outStream.writeObject(World.getRoomStati());
 			outStream.writeObject(itemsHeld);
@@ -134,13 +141,13 @@ public class Game {
 			System.out.println("uh oh it didnt work try again");
 		}
 	}
-	
+
 	public static void loadGame() {
 		try {
 			File saveFile = new File("save0.sav");
-			
+
 			ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(saveFile));
-			
+
 			currentRoom = (Room) inputStream.readObject();
 			World.loadRoomMap((HashMap<String, Room>) inputStream.readObject());
 			itemsHeld = (ArrayList<Item>) inputStream.readObject();
@@ -152,12 +159,23 @@ public class Game {
 		}
 	}
 
+	public static Item findTool(String[] playerIn) {
+		for (String x : playerIn) {
+			for (Item a : itemsHeld) {
+				if (a.getName().equals(x)) {
+					return a;
+				}
+			}
+		}
+		return null;
+	}
+
 	public static void main(String[] args) {
 		runGame();
 	}
 
 	public static void print(Object obj) {
-		System.out.println(obj);
+		mainGui.setActionDesc(obj.toString());
 	}
 
 // the thing that runs the whole thing
@@ -182,13 +200,13 @@ public class Game {
 			case "i":
 				commandUsed = true;
 				if (itemsHeld.isEmpty()) {
-					 mainGui.setActionDesc("You are not holding anything.");
+					Game.print("You are not holding anything.");
 				} else {
 					String displayItems = "";
 					for (int x = 0; x < itemsHeld.size(); x++) {
 						displayItems += itemsHeld.get(x).toString() + "\n";
 					}
-					mainGui.setActionDesc("Items held: \n" + displayItems);
+					Game.print("Items held: \n" + displayItems);
 				}
 			case "save":
 				saveGame();
@@ -196,6 +214,9 @@ public class Game {
 			case "load":
 				loadGame();
 				break;
+			case "use":
+				Item actionTool = findTool(playerInput);
+				actionTool.use();
 			}
 		}
 

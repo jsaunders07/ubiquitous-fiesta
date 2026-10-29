@@ -24,6 +24,10 @@ public class Item implements Serializable{
 		return heaviness;
 	}
 	
+	public void use() {
+		Game.print("You cannot use this item.");
+	}
+	
 	public String toString() {
 		return name;
 	}

@@ -7,6 +7,7 @@ public class Room implements Serializable {
 	private String name = "";
 	private Room[] exitDirs = new Room[6];
 	private HashMap<String, Item> roomItems = new HashMap<>();
+	private boolean isLocked = false;
 	
 	// init class
 	public Room(String roomName) {
@@ -33,6 +34,11 @@ public class Room implements Serializable {
 	public void removeRoomItem(String itemName) {
 		roomItems.remove(itemName);
 	}
+	
+	public void setLocked(boolean a) {
+		isLocked = a;
+	}
+	
 	//get methods
 	public String getName() {
 		return name;
@@ -46,8 +52,16 @@ public class Room implements Serializable {
 		return exitDirs[roomIndex];
 	}
 	
+	public Room[] getAllExits() {
+		return exitDirs;
+	}
+	
 	public Item getItem(String itemName) {
 		return roomItems.get(itemName);
+	}
+	
+	public boolean getIsLocked() {
+		return isLocked;
 	}
 	
 	public HashMap<String, Item> getItemsHash() {

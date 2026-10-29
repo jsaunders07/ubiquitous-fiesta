@@ -22,11 +22,12 @@ public class World {
 		livingRoom.addExit(1, office);
 		livingRoom.addExit(4, bedroom);
 		livingRoom.addExit(2, kitchen);
-		livingRoom.addRoomItem(new Item("tool", false));
+		livingRoom.addRoomItem(new Tool("tool", attic));
 		livingRoom.addRoomItem(new Item("musicbox", false));
 		livingRoom.addRoomItem(new Item("couch", true));
 		
 		office.addExit(0, livingRoom);
+		office.setLocked(true);
 		
 		kitchen.addExit(3, livingRoom);
 		kitchen.addExit(1, garage);
@@ -35,13 +36,15 @@ public class World {
 		kitchen.addRoomItem(new Item("mysteriousorb", false));
 		
 		garage.addExit(0, kitchen);
+		garage.setLocked(true);
 		
 		bedroom.addExit(5, livingRoom);
 		bedroom.addExit(4, attic);
-		bedroom.addRoomItem(new Item("officekey", false));
+		bedroom.addRoomItem(new Tool("officekey", office));
 		bedroom.addRoomItem(new Item("bed", true));
 		
 		attic.addExit(5, bedroom);
+		attic.setLocked(true);
 		
 		return livingRoom;
 	}
