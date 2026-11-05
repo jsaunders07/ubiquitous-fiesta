@@ -45,6 +45,7 @@ public class World {
 		
 		attic.addExit(5, bedroom);
 		attic.setLocked(true);
+		attic.addRoomItem(new Safe("safe"));
 		
 		return livingRoom;
 	}

@@ -28,6 +28,18 @@ public class Item implements Serializable{
 		Game.print("You cannot use this item.");
 	}
 	
+	public void open() {
+		Game.print("You cannot open this item.");
+	}
+	
+	public void close() {
+		Game.print("You cannot close this item.");
+	}
+	
+	public void read() {
+		Game.print("You cannot read this item.");
+	}
+	
 	public String toString() {
 		return name;
 	}

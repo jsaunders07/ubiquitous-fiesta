@@ -56,6 +56,10 @@ public class Room implements Serializable {
 		return exitDirs;
 	}
 	
+	public HashMap<String, Item> getRoomItems() {
+		return roomItems;
+	}
+	
 	public Item getItem(String itemName) {
 		return roomItems.get(itemName);
 	}

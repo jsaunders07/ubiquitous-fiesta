@@ -158,12 +158,25 @@ public class Game {
 			System.out.println("loading file no work: class not found");
 		}
 	}
+	
+	public static void addInventoryItem(Item n) {
+		itemsHeld.add(n);
+	}
+	
+	public static void addItemToCurrentRoom(Item n) {
+		currentRoom.addRoomItem(n);
+	}
 
 	public static Item findTool(String[] playerIn) {
 		for (String x : playerIn) {
 			for (Item a : itemsHeld) {
 				if (a.getName().equals(x)) {
 					return a;
+				}
+			}
+			for (String a : currentRoom.getRoomItems().keySet()) {
+				if (a.equals(x)) {
+					return currentRoom.getRoomItems().get(a);
 				}
 			}
 		}
@@ -216,7 +229,28 @@ public class Game {
 				break;
 			case "use":
 				Item actionTool = findTool(playerInput);
-				actionTool.use();
+				if (!(actionTool == null)) {
+					actionTool.use();
+				}
+				break;
+			case "open":
+				Item openTool = findTool(playerInput);
+				if (!(openTool == null)) {
+					openTool.open();
+				}
+				break;
+			case "close":
+				Item closeTool = findTool(playerInput);
+				if (!(closeTool == null)) {
+					closeTool.close();
+				}
+				break;
+			case "read":
+				Item readTool = findTool(playerInput);
+				if (!(readTool == null)) {
+					readTool.read();
+				}
+				break;
 			}
 		}
 
