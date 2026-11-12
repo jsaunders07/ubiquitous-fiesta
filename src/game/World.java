@@ -25,6 +25,7 @@ public class World {
 		livingRoom.addRoomItem(new Tool("tool", attic));
 		livingRoom.addRoomItem(new Item("musicbox", false));
 		livingRoom.addRoomItem(new Item("couch", true));
+		livingRoom.setNPC(new John());
 		
 		office.addExit(0, livingRoom);
 		office.setLocked(true);

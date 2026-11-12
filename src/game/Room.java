@@ -7,6 +7,7 @@ public class Room implements Serializable {
 	private String name = "";
 	private Room[] exitDirs = new Room[6];
 	private HashMap<String, Item> roomItems = new HashMap<>();
+	private NPC roomNPC = null;
 	private boolean isLocked = false;
 	
 	// init class
@@ -39,7 +40,15 @@ public class Room implements Serializable {
 		isLocked = a;
 	}
 	
+	public void setNPC(NPC a) {
+		roomNPC = a;
+	}
+	
 	//get methods
+	public NPC getNPC() {
+		return roomNPC;
+	}
+	
 	public String getName() {
 		return name;
 	}

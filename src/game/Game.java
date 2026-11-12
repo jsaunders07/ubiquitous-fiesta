@@ -72,7 +72,6 @@ public class Game {
 			Game.print("The " + tempRoom.getName() + " is locked!");
 		} else {
 			currentRoom = tempRoom;
-			Game.print("");
 		}
 
 	}
@@ -190,6 +189,10 @@ public class Game {
 	public static void print(Object obj) {
 		mainGui.setActionDesc(obj.toString());
 	}
+	
+	public static void printAdd(Object obj) {
+		mainGui.setActionDesc(mainGui.getActionDesc() + "\n\n" + obj.toString());
+	}
 
 // the thing that runs the whole thing
 	public static void runLogic() {
@@ -249,6 +252,13 @@ public class Game {
 				Item readTool = findTool(playerInput);
 				if (!(readTool == null)) {
 					readTool.read();
+				}
+				break;
+			case "talk":
+				for (String x : playerInput) {
+					if (currentRoom.getNPC().getName().equals(x)) {
+						currentRoom.getNPC().talk();
+					}
 				}
 				break;
 			}
