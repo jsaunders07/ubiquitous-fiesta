@@ -12,7 +12,7 @@ import java.awt.event.*;
 public class Game {
 
 	private static Room currentRoom = World.buildWorld();
-	private static ArrayList<Item> itemsHeld = new ArrayList<>();
+	public static ArrayList<Item> itemsHeld = new ArrayList<>();
 	public static HashMap<String, String> roomDescs = new HashMap<>();
 	public static Gui mainGui = new Gui("Game Window");
 
