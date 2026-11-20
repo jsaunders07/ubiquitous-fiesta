@@ -35,6 +35,7 @@ public class World {
 		kitchen.addRoomItem(new Item("flashlight", false));
 		kitchen.addRoomItem(new Item("knife", false));
 		kitchen.addRoomItem(new Item("mysteriousorb", false));
+		kitchen.setNPC(new Fred());
 		
 		garage.addExit(0, kitchen);
 		garage.setLocked(true);
@@ -46,6 +47,7 @@ public class World {
 		
 		attic.addExit(5, bedroom);
 		attic.setLocked(true);
+		attic.addRoomItem(new Item("money", false));
 		attic.addRoomItem(new Safe("safe"));
 		
 		return livingRoom;

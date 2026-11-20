@@ -162,6 +162,10 @@ public class Game {
 		itemsHeld.add(n);
 	}
 	
+	public static void removeInventoryItem(Item n) {
+		itemsHeld.remove(n);
+	}
+	
 	public static void addItemToCurrentRoom(Item n) {
 		currentRoom.addRoomItem(n);
 	}
@@ -258,6 +262,13 @@ public class Game {
 				for (String x : playerInput) {
 					if (currentRoom.getNPC().getName().equals(x)) {
 						currentRoom.getNPC().talk();
+					}
+				}
+				break;
+			case "give":
+				for (String x : playerInput) {
+					if (currentRoom.getNPC().getName().equals(x)) {
+						currentRoom.getNPC().give(findTool(playerInput));
 					}
 				}
 				break;

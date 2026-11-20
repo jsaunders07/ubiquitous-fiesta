@@ -26,6 +26,10 @@ public class NPC {
 		Game.print("You can't talk to " + name.toUpperCase() + ".");
 	}
 	
+	public void give(Item a) {
+		Game.print(this.getName()+" doesn't want the "+a.getName());
+	}
+	
 	public String getResponse(String[] dialogOptions) {
 		int c = 1;
 		String dialog = "";
